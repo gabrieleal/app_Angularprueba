@@ -1,5 +1,19 @@
 <p>Nombre : {{getNombre()}} &nbsp; 
 Apellido : {{getApellido()}}&nbsp;
 Edad : {{getEdad()}}&nbsp;
-Empresa : {{getEmpresa()}}&nbsp;
-Es Mayor? : {{getEdad()>18 ? "verdadero" : "falso"}}</p><br>
+Empresa : {{Empresa.value}}&nbsp;
+Es Mayor? : {{getEdad()>18 ? "verdadero" : "falso"}}
+<br>
+{{txtReg}} <br>
+<!-- <input type="checkbox" [checked]="Registrousuraio" (click)="usuarioRegistrado()" > -->
+log in <input type="radio" name="reg" value="registrarse" (click)="usuarioRegistrado($event)" #radio >
+<!-- pansandole como parametro $event le estoy pasando el objeto Event -->
+log out <input type="radio" name="reg" value="salir" (click)="usuarioRegistrado($event)" #radios>
+</p> <br>
+
+<br>
+
+<!-- dentro de los () se declara el evento y luego con un = se declara la funcion a la que se llama-->
+<input type="text" [disabled]="disableproperty" #Empresa placeholder="ingrese nombre Empresa">
+<!-- con # se define el ID ó TEMPLATE REFERENCE -->
+<input type="button" value="cargar" (click)="nombrarEmpresa(Empresa.value)" >

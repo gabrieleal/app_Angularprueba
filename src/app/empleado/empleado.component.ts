@@ -11,6 +11,11 @@ export class EmpleadoComponent implements OnInit  {
   private edad = 25;
   private empresa = "metalExploit SA";
   
+  //property binding
+  disableproperty = false;
+  Registrousuraio=false;
+  txtReg = "No hay nadie Registrado";
+
   constructor() { }
 
   getNombre():string{
@@ -39,7 +44,19 @@ export class EmpleadoComponent implements OnInit  {
     this.empresa = e;
   }
 
+  nombrarEmpresa(e:string){
+    this.disableproperty=true;
+  }
 
+  // EVENT BINDING
+  usuarioRegistrado(event:Event){
+    // realiz un casteo del evento al elemnto html para obtener su propiedad value
+    if((<HTMLInputElement>event.target).value == "registrarse"){
+      this.txtReg = (`usuraio Resgistrado ${this.nombre}`);
+    }else{
+      this.txtReg = "No hay nadie Registrado";
+    }
+  }
   ngOnInit(): void {
   }
 
