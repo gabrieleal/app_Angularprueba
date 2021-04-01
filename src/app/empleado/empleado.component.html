@@ -1,7 +1,8 @@
-<p>Nombre : {{getNombre()}} &nbsp; 
+<p class="h3">Nombre : {{getNombre()}} &nbsp; 
 Apellido : {{getApellido()}}&nbsp;
 Edad : {{getEdad()}}&nbsp;
-Empresa : {{Empresa.value}}&nbsp;
+<!-- Empresa : {{Empresa.value}}&nbsp; -->
+Empresa : {{empresa}}&nbsp;
 Es Mayor? : {{getEdad()>18 ? "verdadero" : "falso"}}
 <br>
 {{txtReg}} <br>
@@ -14,6 +15,13 @@ log out <input type="radio" name="reg" value="salir" (click)="usuarioRegistrado(
 <br>
 
 <!-- dentro de los () se declara el evento y luego con un = se declara la funcion a la que se llama-->
-<input type="text" [disabled]="disableproperty" #Empresa placeholder="ingrese nombre Empresa">
+<!-- <input type="text" [disabled]="disableproperty" #Empresa placeholder="ingrese nombre Empresa"> -->
+
 <!-- con # se define el ID ó TEMPLATE REFERENCE -->
-<input type="button" value="cargar" (click)="nombrarEmpresa(Empresa.value)" >
+<!-- <input type="button" value="cargar" (click)="nombrarEmpresa(Empresa.value)" > -->
+
+
+<!-- TWO WAY BINDING  -->
+
+<!-- <input type="text" [disabled]="disableproperty" #Empresa placeholder="ingrese nombre Empresa" (keyup)="nombrarEmpresa($event)"> -->
+<input type="text" [(ngModel)]="empresa">

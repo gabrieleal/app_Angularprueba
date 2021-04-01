@@ -9,7 +9,7 @@ export class EmpleadoComponent implements OnInit  {
   private nombre = "Mario";
   private apellido = "Perex";
   private edad = 25;
-  private empresa = "metalExploit SA";
+  empresa = "metalExploit SA";
   
   //property binding
   disableproperty = false;
@@ -44,8 +44,8 @@ export class EmpleadoComponent implements OnInit  {
     this.empresa = e;
   }
 
-  nombrarEmpresa(e:string){
-    this.disableproperty=true;
+  nombrarEmpresa(e:Event){
+    this.setEmpresa((<HTMLInputElement>e.target).value);
   }
 
   // EVENT BINDING

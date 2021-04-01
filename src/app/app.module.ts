@@ -1,12 +1,12 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
-import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { EmpleadosComponent } from './empleados/empleados.component';
 import { EmpleadoComponent } from './empleado/empleado.component';
 import { EjemploInlineComponent } from './ejemplo-inline/ejemplo-inline.component';
 import { CustomersComponent } from './customers/customers.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -14,7 +14,7 @@ import { CustomersComponent } from './customers/customers.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
